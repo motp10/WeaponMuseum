@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Восемь экспонатов по курсу «Безопасное обращение с оружием». История, внешние признаки и культура безопасности.">
+  <meta name="theme-color" content="#242a22">
+  <title>Музей оружейной культуры</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="museum.css">
+  <script src="museum.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">К содержанию</a>
+  <header class="masthead" id="top">
+    <div class="wrap masthead-inner">
+      <a class="brand" href="#top"><span class="mark" aria-hidden="true"></span><span>Музей оружейной<br>культуры</span></a>
+      <nav aria-label="Навигация по музею">
+        <a href="#exhibits">Экспозиция</a>
+        <a href="#safety">Безопасность</a>
+        <a href="#quiz">Самопроверка</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="museum-title">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow hero-eyebrow">Виртуальная экспозиция</p>
+          <h1 id="museum-title">Музей оружейной<br class="desktop-break"> культуры</h1>
+          <p class="hero-description">Рассмотрите восемь экспонатов и узнайте, что их история и внешний вид могут рассказать о культуре безопасности.</p>
+          <a class="primary-link" href="#exhibits">Смотреть экспонаты <span aria-hidden="true">↓</span></a>
+        </div>
+        <p class="course-label">Учебный курс<br><strong>«Безопасное обращение с оружием»</strong></p>
+      </div>
+    </section>
+    <section class="wrap exhibit-section" id="exhibits" aria-labelledby="exhibits-title">
+      <div class="section-heading">
+        <h2 id="exhibits-title">Экспозиция</h2>
+        <p>Откройте карточку, чтобы узнать историю предмета, рассмотреть его внешние признаки и прочитать правило безопасности.</p>
+      </div>
+      <div class="filter-bar">
+        <div class="filters" role="group" aria-label="Разделы экспозиции">
+          <button type="button" data-filter="all" aria-pressed="true">Все экспонаты</button>
+          <button type="button" data-filter="history" aria-pressed="false">Исторические образцы</button>
+          <button type="button" data-filter="safety" aria-pressed="false">Безопасность</button>
+        </div>
+        <p class="filter-count" id="filter-count" role="status"></p>
+      </div>
+      <div class="cards" id="exhibit-cards"></div>
+      <noscript><p>Для просмотра карточек и прохождения самопроверки включите JavaScript в браузере.</p></noscript>
+    </section>
+    <section class="safety-section" id="safety" aria-labelledby="safety-title">
+      <div class="wrap safety-layout">
+        <div>
+          <p class="eyebrow">Памятка посетителя</p>
+          <h2 id="safety-title">Если вы заметили предмет, похожий на оружие</h2>
+          <p>По форме, цвету и возрасту предмета нельзя определить, безопасен ли он.</p>
+          <a href="https://www.atf.gov/firearms/docs/guide/safety-and-security-firearm-owners-atf-p-530022" class="source-link" target="_blank" rel="noopener">Источник правил безопасности <span aria-hidden="true">↗</span></a>
+        </div>
+        <ol class="safety-steps">
+          <li><div><strong>Не прикасайтесь</strong><p>Оставьте предмет на месте. Не пытайтесь его осматривать или переносить.</p></div></li>
+          <li><div><strong>Отойдите</strong><p>Держитесь на расстоянии и попросите окружающих не приближаться.</p></div></li>
+          <li><div><strong>Сообщите ответственному лицу</strong><p>В музее обратитесь к сотруднику, на занятии — к преподавателю. Если вы ребёнок, сразу скажите взрослому.</p></div></li>
+        </ol>
+      </div>
+    </section>
+    <section class="wrap quiz-section" id="quiz" aria-labelledby="quiz-title">
+      <div class="quiz-intro">
+        <h2 id="quiz-title">Самопроверка</h2>
+        <p>Четыре вопроса об экспонатах и правилах безопасности.</p>
+      </div>
+      <div class="quiz-panel" id="quiz-panel"></div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap footer-inner">
+      <a class="brand" href="#top"><span class="mark" aria-hidden="true"></span><span>Музей оружейной<br>культуры</span></a>
+      <p>Музейные источники и сведения об иллюстрациях указаны в карточках.</p>
+      <a class="to-top" href="#top">Наверх <span aria-hidden="true">↑</span></a>
+    </div>
+  </footer>
+  <dialog id="exhibit-dialog" aria-labelledby="exhibit-title">
+    <div class="dialog-inner">
+      <header class="dialog-top">
+        <p class="eyebrow" id="dialog-position"></p>
+        <button class="close" type="button" aria-label="Закрыть карточку" autofocus>×</button>
+      </header>
+      <div id="exhibit-detail"></div>
+      <nav class="dialog-nav" aria-label="Другие экспонаты">
+        <button type="button" id="previous-exhibit">← Предыдущий</button>
+        <button type="button" id="next-exhibit">Следующий →</button>
+      </nav>
+    </div>
+  </dialog>
+</body>
+</html>
