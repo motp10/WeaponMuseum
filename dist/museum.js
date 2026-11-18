@@ -44,6 +44,8 @@ const exhibits = [
     source: ['Музей Калининского фронта, карточка ППШ', 'https://ar.culture.ru/ru/subject/pistolet-pulemyot-shpagina-ppsh'],
     photo: ['501ghost', 'https://commons.wikimedia.org/wiki/File:PPsh-41_at_the_National_Museum_of_Scotland.jpg', 'CC0 1.0', 'https://creativecommons.org/publicdomain/zero/1.0/'],
   },
+  {"id": "ak12", "group": "modern", "label": "2010-е · Автомат", "title": "АК-12", "summary": "Современное развитие семейства автоматов Калашникова.", "history": "АК-12 относится к современному поколению семейства Калашникова. Первые поставки в Вооружённые силы России начались в 2018 году. На фотографии показан вариант, представленный в 2020 году. Внешний вид разных выпусков может различаться.", "exterior": "Видны отдельная пистолетная рукоять, приклад, цевьё и изогнутый магазин. Цевьё — внешняя часть вокруг переднего участка ствола. Приклад образует заднюю часть силуэта, а рукоять расположена под корпусом.", "safety": "Современные материалы и наличие защитных механизмов не позволяют судить о состоянии оружия по фотографии. При обнаружении похожего предмета соблюдайте дистанцию и сообщите ответственному лицу.", "source": ["Ростех, историческая справка об АК-12", "https://elements.rostec.ru/media/news/arsenal-spetsnaza/"], "photo": ["Nickel nitride / Sumek101", "https://commons.wikimedia.org/wiki/File:AK-12.png", "CC0 1.0", "https://creativecommons.org/publicdomain/zero/1.0/"]},
+  {"id": "glock", "group": "modern", "label": "Современный пистолет · Gen5", "title": "Glock 17", "summary": "Полимерная рамка в истории современных служебных пистолетов.", "history": "История семейства Glock 17 связана с австрийскими испытаниями 1982 года и пистолетом P80. Одной из характерных особенностей стала полимерная рамка. На фотографии показан более поздний Glock 17 пятого поколения, а не ранний P80.", "exterior": "Прямоугольный металлический кожух-затвор расположен над полимерной рамкой. Рукоять имеет текстурированную поверхность. Спусковая скоба — дугообразное ограждение вокруг спускового крючка.", "safety": "При обращении под руководством инструктора палец держат вне спусковой скобы до разрешённого действия. Внешний вид и наличие защитных механизмов не подтверждают безопасность найденного предмета.", "source": ["GLOCK, история P80 и G17", "https://eu.glock.com/GLOCK-P80-History"], "photo": ["Tony Webster", "https://commons.wikimedia.org/wiki/File:Glock_17_Gen_5_Gun_(52953524644).jpg", "CC BY 2.0", "https://creativecommons.org/licenses/by/2.0/"]},
   {
     id: 'model', group: 'safety', label: 'Учебный предмет',
     title: 'Инертный макет',
@@ -84,29 +86,144 @@ const exhibits = [
 
 const questions = [
   {
-    title: 'Какой видимый признак помогает отличить револьвер Нагана на фотографии?',
-    options: ['Длинная деревянная ложа', 'Цилиндрический барабан', 'Круглый дисковый магазин'],
-    answer: 1,
-    note: 'Барабан виден в центре рамки. Длинная ложа характерна для винтовки Мосина, а дисковый магазин показан на фотографии ППШ-41.',
+    "title": "В музейном коридоре лежит предмет, похожий на пистолет. Посетитель предлагает отнести его охране. Как поступить?",
+    "options": [
+      "Согласиться, если предмет небольшой",
+      "Оставить предмет на месте, отойти и сообщить сотруднику",
+      "Сначала определить модель по маркировке",
+      "Перенести предмет вместе с другим посетителем"
+    ],
+    "answers": [
+      1
+    ],
+    "note": "Перенос требует контакта с неизвестным предметом. Сотруднику сообщают о находке, сохраняя дистанцию."
   },
   {
-    title: 'В коридоре лежит предмет, похожий на оружие. Что делать?',
-    options: ['Перенести его в безопасное место', 'Подойти поближе, чтобы узнать модель', 'Оставить на месте, отойти и сообщить ответственному лицу'],
-    answer: 2,
-    note: 'Безопаснее соблюдать дистанцию и сообщить о предмете. Оценку его состояния оставьте специалисту.',
+    "title": "Какие признаки сами по себе НЕ подтверждают безопасность найденного предмета? Выберите все подходящие ответы.",
+    "options": [
+      "Яркая окраска",
+      "Сильная ржавчина",
+      "Сходство с фотографией учебного макета",
+      "Компактный размер"
+    ],
+    "answers": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "note": "Цвет, износ, сходство с макетом и размер не подтверждают состояние предмета. Оценку выполняет специалист."
   },
   {
-    title: 'Что подтверждает, что на занятии показывают учебный макет?',
-    options: ['Указание преподавателя, который выдал образец', 'Яркий цвет корпуса', 'Отсутствие видимых повреждений'],
-    answer: 0,
-    note: 'Окраска и состояние поверхности сами по себе не подтверждают статус предмета.',
+    "title": "Вы сравниваете фотографии Нагана и ТТ. Какое описание соответствует экспозиции?",
+    "options": [
+      "У обоих виден круглый дисковый магазин",
+      "У ТТ виден барабан, у Нагана — длинная ложа",
+      "У Нагана виден барабан, у ТТ — прямоугольный кожух-затвор",
+      "У Нагана виден цевьё современного автомата"
+    ],
+    "answers": [
+      2
+    ],
+    "note": "Барабан — характерный внешний признак револьвера. В карточке ТТ описан прямоугольный кожух-затвор."
   },
   {
-    title: 'Зачем в курсе показывают запираемый сейф?',
-    options: ['Чтобы различать исторические образцы', 'Чтобы объяснить, как ограничивают доступ', 'Чтобы показать, как устроены средства защиты слуха'],
-    answer: 1,
-    note: 'Запираемое хранилище служит для ограничения доступа детей и посторонних.',
+    "title": "Какие пары «термин — внешняя часть» верны? Выберите все подходящие ответы.",
+    "options": [
+      "Приклад — задняя часть силуэта длинноствольного образца",
+      "Цевьё — внешняя часть вокруг переднего участка ствола",
+      "Спусковая скоба — прозрачная часть защитных очков",
+      "Кожух-затвор — металлическая верхняя часть показанного Glock 17"
+    ],
+    "answers": [
+      0,
+      1,
+      3
+    ],
+    "note": "Приклад, цевьё и кожух-затвор описаны в карточках образцов. Спусковая скоба ограждает спусковой крючок."
   },
+  {
+    "title": "Участник занятия называет любой синий предмет в форме пистолета учебным. Какие выводы обоснованы? Выберите все подходящие ответы.",
+    "options": [
+      "Окраска не подтверждает статус предмета",
+      "По синему цвету можно разрешить самостоятельный осмотр",
+      "На занятии статус выданного образца подтверждает преподаватель",
+      "Любой макет можно брать без указания преподавателя"
+    ],
+    "answers": [
+      0,
+      2
+    ],
+    "note": "Подтверждение преподавателя относится к выданному учебному образцу. Переносить этот вывод на похожие находки нельзя."
+  },
+  {
+    "title": "Сейф закрыт, но ключ оставлен рядом и доступен детям. Какой вывод верен?",
+    "options": [
+      "Закрытая дверца уже обеспечивает ограничение доступа",
+      "Ключ имеет значение только для сохранности самого сейфа",
+      "Доступ ограничен, если рядом есть предупреждающая табличка",
+      "Доступ к ключу также нужно ограничить"
+    ],
+    "answers": [
+      3
+    ],
+    "note": "Контроль хранения включает контроль ключей. Доступный ключ позволяет открыть закрытое хранилище."
+  },
+  {
+    "title": "Какие утверждения об истории образцов соответствуют карточкам? Выберите все подходящие ответы.",
+    "options": [
+      "ТТ связан с группой Фёдора Токарева и Тульским заводом",
+      "ППШ-41 приняли на вооружение в декабре 1940 года",
+      "Glock 17 пятого поколения — тот же ранний экземпляр P80 1982 года",
+      "Первые поставки АК-12 начались в 2018 году"
+    ],
+    "answers": [
+      0,
+      1,
+      3
+    ],
+    "note": "В обозначении ППШ указан 1941 год, принятие произошло в декабре 1940 года. Фотография Glock показывает более позднее поколение."
+  },
+  {
+    "title": "На фотографии АК-12 видны полимерные детали, а на винтовке Мосина — деревянная ложа. Что можно обоснованно заключить?",
+    "options": [
+      "Оба предмета безопасны, поскольку находятся на фотографиях",
+      "Материал внешних деталей позволяет определить состояние оружия",
+      "У показанных образцов различаются внешнее оформление и материалы",
+      "Полимерные детали означают, что перед нами учебная копия"
+    ],
+    "answers": [
+      2
+    ],
+    "note": "Фотография позволяет сравнить внешние признаки. Материал деталей не подтверждает статус учебного предмета и его состояние."
+  },
+  {
+    "title": "Перед занятием на площадке какие действия соответствуют памятке экспозиции? Выберите все подходящие ответы.",
+    "options": [
+      "Уточнить у преподавателя требования к защите глаз и слуха",
+      "Надеть только наушники и пропустить вводные указания",
+      "Использовать требуемую защиту в обозначенных зонах",
+      "Самостоятельно проверить неизвестный предмет на столе"
+    ],
+    "answers": [
+      0,
+      2
+    ],
+    "note": "Требования к средствам защиты уточняют заранее. Осмотр неизвестных предметов и самостоятельные действия без указания преподавателя не следуют памятке."
+  },
+  {
+    "title": "За ограждением витрины лежит отдельная деталь, а знак запрещает касание. Какое решение соответствует правилам?",
+    "options": [
+      "Остаться со стороны посетителя и сообщить сотруднику",
+      "Подобрать деталь, если рядом нет целого образца",
+      "Дотянуться до детали, сохраняя ноги перед ограждением",
+      "Попросить другого посетителя передать деталь"
+    ],
+    "answers": [
+      0
+    ],
+    "note": "Правило относится и к отдельным деталям. Ограждение обозначает границу осмотра, находку оставляют на месте."
+  }
 ];
 
 const cards = document.querySelector('#exhibit-cards');
@@ -123,6 +240,9 @@ let activeExhibit = 0;
 let opener;
 let questionIndex = 0;
 let score = 0;
+let selectedAnswers = new Set();
+let answered = false;
+let mistakes = [];
 
 function photoMarkup(exhibit, inDialog = false) {
   const extension = exhibit.photo ? 'jpg' : 'webp';
@@ -203,45 +323,73 @@ nextExhibit.addEventListener('click', () => moveExhibit(1));
 
 function renderQuestion(shouldFocus = false) {
   const question = questions[questionIndex];
+  selectedAnswers = new Set();
+  answered = false;
   if (question) {
+    const multiple = question.answers.length > 1;
     quiz.innerHTML = `
       <p class="eyebrow quiz-position">Вопрос ${questionIndex + 1} из ${questions.length}</p>
       <h3 id="question-title" tabindex="-1">${question.title}</h3>
-      <div class="answers" role="group" aria-labelledby="question-title">
-        ${question.options.map((option, index) => `<button type="button" data-answer="${index}" aria-disabled="false"><span aria-hidden="true">${['А', 'Б', 'В'][index]}</span>${option}</button>`).join('')}
-      </div>
+      <p class="answer-hint">${multiple ? 'Выберите все верные варианты. Балл начисляется за полный ответ.' : 'Выберите один вариант.'}</p>
+      <form id="answer-form">
+        <fieldset class="answers" aria-labelledby="question-title">
+          ${question.options.map((option, index) => `
+            <label class="answer-option">
+              <input type="${multiple ? 'checkbox' : 'radio'}" name="answer" value="${index}">
+              <span>${option}</span>
+            </label>`).join('')}
+        </fieldset>
+        <button class="quiz-action" type="submit" id="check-answer" disabled>Проверить ответ</button>
+      </form>
       <div id="quiz-feedback" role="status"></div>
       <button class="quiz-action" type="button" data-action="next" hidden>${questionIndex === questions.length - 1 ? 'Показать результат' : 'Следующий вопрос'} <span aria-hidden="true">→</span></button>`;
   } else {
     quiz.innerHTML = `
       <p class="eyebrow quiz-position">Результат</p>
       <h3 id="question-title" tabindex="-1">Правильных ответов: ${score} из ${questions.length}</h3>
-      <p>${score === questions.length ? 'Вы распознали внешний признак револьвера и правильно выбрали правила безопасности.' : 'Загляните в карточки экспонатов и памятку, затем попробуйте ещё раз.'}</p>
+      <p>${score === questions.length ? 'Все задания выполнены верно.' : 'Повторите темы, в которых возникли ошибки.'}</p>
+      ${mistakes.length ? `<div class="quiz-review"><h4>Разбор ошибок</h4><ol>${mistakes.map(index => `<li><strong>${questions[index].title}</strong><p>Верные варианты — ${questions[index].answers.map(answer => questions[index].options[answer]).join(' · ')}.</p><p>${questions[index].note}</p></li>`).join('')}</ol></div>` : ''}
       <button class="quiz-action" type="button" data-action="restart">Пройти ещё раз <span aria-hidden="true">↻</span></button>`;
   }
   if (shouldFocus) quiz.querySelector('#question-title').focus();
 }
 
-quiz.addEventListener('click', event => {
-  const button = event.target.closest('button');
-  if (!button || button.getAttribute('aria-disabled') === 'true') return;
-  if (button.hasAttribute('data-answer')) {
-    const question = questions[questionIndex];
-    const correct = Number(button.dataset.answer) === question.answer;
-    if (correct) score++;
-    for (const answer of quiz.querySelectorAll('[data-answer]')) {
-      answer.setAttribute('aria-disabled', 'true');
-      if (Number(answer.dataset.answer) === question.answer) answer.classList.add('correct');
-    }
-    if (!correct) button.classList.add('incorrect');
-    quiz.querySelector('#quiz-feedback').textContent = `${correct ? 'Верно.' : 'Неверно.'} ${question.note}`;
-    quiz.querySelector('[data-action="next"]').hidden = false;
-    return;
+quiz.addEventListener('change', () => {
+  selectedAnswers = new Set([...quiz.querySelectorAll('input:checked')].map(input => Number(input.value)));
+  quiz.querySelector('#check-answer').disabled = selectedAnswers.size === 0;
+});
+
+quiz.addEventListener('submit', event => {
+  event.preventDefault();
+  if (answered || selectedAnswers.size === 0) return;
+  answered = true;
+  const question = questions[questionIndex];
+  const correct = selectedAnswers.size === question.answers.length &&
+    question.answers.every(answer => selectedAnswers.has(answer));
+  if (correct) score++;
+  else mistakes.push(questionIndex);
+  for (const input of quiz.querySelectorAll('input')) {
+    const index = Number(input.value);
+    input.disabled = true;
+    if (question.answers.includes(index)) input.closest('label').classList.add('correct');
+    else if (input.checked) input.closest('label').classList.add('incorrect');
   }
+  quiz.querySelector('#check-answer').hidden = true;
+  const correctOptions = question.answers.map(answer => question.options[answer]).join(' · ');
+  quiz.querySelector('#quiz-feedback').textContent =
+    `${correct ? 'Верно.' : 'Ответ не засчитан.'} Верные варианты — ${correctOptions}. ${question.note}`;
+  quiz.querySelector('[data-action="next"]').hidden = false;
+});
+
+quiz.addEventListener('click', event => {
+  const button = event.target.closest('[data-action]');
+  if (!button) return;
   if (button.dataset.action === 'restart') {
     score = 0;
     questionIndex = 0;
+    mistakes = [];
   } else {
+    if (!answered) return;
     questionIndex++;
   }
   renderQuestion(true);

@@ -188,3 +188,19 @@ figcaption { margin-top: 6px; font-size: 0.71rem; color: var(--muted); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
 }
+
+.answers { border: 0; padding: 0; min-width: 0; }
+.answer-hint { font-size: 0.85rem; }
+.answer-option { display: flex; align-items: start; gap: 11px; padding: 11px; border: 1px solid var(--line); border-radius: 3px; font-size: 0.9rem; cursor: pointer; }
+.answer-option:has(input:checked) { border-color: var(--olive); background: #eeeee4; }
+.answer-option:focus-within { outline: 2px solid #a05b28; outline-offset: 2px; }
+.answer-option input { width: 18px; height: 18px; margin: 3px 0 0; flex-shrink: 0; accent-color: var(--olive); }
+.answer-option.correct { border-color: #687451; background: #e9edde; }
+.answer-option.incorrect { border-color: #a57663; background: #f3e6df; }
+.quiz-action:disabled { opacity: 0.5; cursor: default; }
+.quiz-review { margin-top: 22px; }
+.quiz-review h4 { margin: 0 0 12px; }
+.quiz-review ol { padding-left: 20px; }
+.quiz-review li { padding-bottom: 16px; font-size: 0.87rem; }
+.quiz-review p { margin-top: 7px; color: var(--muted); }
+.card-button .photo-ak12 { object-fit: contain; }
