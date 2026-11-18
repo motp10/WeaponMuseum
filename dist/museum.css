@@ -204,3 +204,5 @@ figcaption { margin-top: 6px; font-size: 0.71rem; color: var(--muted); }
 .quiz-review li { padding-bottom: 16px; font-size: 0.87rem; }
 .quiz-review p { margin-top: 7px; color: var(--muted); }
 .card-button .photo-ak12 { object-fit: contain; }
+
+.handling-rules { padding-bottom: 48px; margin-bottom: 48px; border-bottom: 1px solid #cbcebe; }
